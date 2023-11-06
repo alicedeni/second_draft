@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание профиля. О себе</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        @font-face {
+            font-family: "MuseoSansCyrl"; 
+            src: url("{% static 'fonts/MuseoSansCyrl300.otf' %}") format("opentype"); 
+        }
+        * {
+            font-family: "MuseoSansCyrl";
+        }
+    </style>
+</head>
+<body>
+    <header class="header_homeet">
+        <div class="header_elem">
+            <img class="main_logo" src="{% static 'img/homeet.png' %}" alt="homeet logo">
+            <form>
+                <button class="button1">Выйти из аккаунта</button>
+            </form>
+        </div>
+    </header>
+    <main class="main_body">
+        <form>
+            <button class="button1">На главную</button>
+        </form>
+        <div class="making_profile_title">
+            <h1>Создание профиля</h1>
+            <p class="gray_text">/ О себе</p>
+        </div>
+        <div class="line"></div>
+        <div class="col">
+        <div class="all">
+        <div class="main_about">
+            <div class="uploading_photo">
+                <p><b>Аватар профиля</b></p>
+                <form>
+                    <label for="image" class="button2">Загрузить
+                        <input name="image" id="image" type="file" style="display:none" accept=".jpg, .jpeg, .png" onchange="previewFile()">
+                    </label>
+                </form>
+                <p class="gray_text">Загрузите фотографию весом не более 10 мб</p>
+            </div>
+            <form>
+                <input class="inputt" name="name" id="name" type="text" placeholder="Имя и фамилия" onchange='eventName(this.value)'>
+                <p class="error" id="name_format">Неверный формат имени</p>
+                <p class="error" id="name_f">Неверный ф</p>
+            </form>
+            
+            <form class="variants" id="variants">
+                <input class="radio" name="gender" id="male" value="male" type="radio" onchange='eventGender1(this.value)'>
+                <label for="male" class="variant">Парень</label>
+                <input class="radio" name="gender" id="female" value="female" type="radio" onchange='eventGender2(this.value)'>
+                <label for="female" class="variant">Девушка</label>
+            </form>
+            <form>
+                <input class="inputtd" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" name="date" id="datetime-local" type="text" placeholder="Дата рождения" onfocus="(this.type='date')"  onchange='eventDate(this.value)'>
+                <p class="error">Неверный формат даты</p>
+            </form> 
+            <form>
+                <input class="inputt" name="telegram" id="telegram" type="text" placeholder="Телеграм"  onchange='eventNickName(this.value)'>
+                <p class="error" id="nick_format">Неверный формат никнейма</p>
+            </form>
+            <form>
+                <input class="inputt" name="number" id="number" type="tel" placeholder="Номер телефона" onchange='eventPhone(this.value)'>
+                <p class="error" id="number_format">Неверный формат номера телефона</p>
+            </form>
+            <div>
+                <form>
+                    <textarea class="inputta" name="textarea" id="textarea" cols="15" rows="5" placeholder="О себе" onchange='eventAboutMyself(this.value)'></textarea>
+                </form>
+                <p class="comment">Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу завести собаку. Очень люблю читать, играть в хорроры и смотреть аниме. Открыт к общению и взаимопомощи :)</p>
+            </div>
+        </div>
+        <div class="future_profile_all">
+            <p style="margin-bottom: 24px;">Так будет выглядеть твоя будущая страница</p>
+            <div class="future_profile">
+                <div class="photo_in_profile">
+                    <img class="border_photo" id="preview_profile" src="" >
+                    <form>
+                        <button class="button_under_photo" onclick="contacts()" type=button>Показать контакты</button>
+                        <p id="telegram2"></p>
+                        <p id="number2"></p>
+                    </form>
+                </div>
+                <div class="about_person">
+                    <p id="name2"></p>
+                    <div class="main_info">
+                        <p class="small" id="gender2"></p>
+                        <div class="point"></div>
+                        <p class="small" id="age2"></p>
+                        <div class="point"></div>
+                        <p class="smth"></p>
+                    </div>
+                    <p class="smth"></p>
+                    <form class="about">
+                        <div class="comment_about" id="comment_about2">Описание</div>
+                        <button class="turn_button" type=button onclick="turnAbout()">Развернуть</button>
+                    </form>
+                    <p class="border_for_info">
+                    </p>
+                </div>
+            </div>
+            <div class="notice">
+                <div>
+                    <p><b>Мы совсем ничего про тебя не знаем</b></p>
+                    <p>Расскажи о себе.<br>Люди пишут тем, кому доверяют. Тем более при поиске соседа</p>
+                </div>
+                    <img class="smile" src="{% static 'img/smile.jpg' %}" width="25" 
+                    height="22" alt="sad face">
+            </div>
+            <div class="continue">
+                <div></div>
+                <form>
+                    <a class="button2" href="{% url 'index2' %}">Продолжить</a>
+                </form>
+            </div>
+        </div>
+        </div>
+        </div>
+        <script src="{% static 'js/script1.js' %}"></script>
+    </main>
+    <footer class="footer">
+        <p class="email">Support@hommet.com</p>
+        <p>Техническая поддержка</p>
+        <div class = "info">
+            <div class="info_text">
+                <p>О сервисе</p>
+                <p>Контакты</p>
+                <p>Политика конфиденциальности</p>
+            </div>
+            <div>
+                <a href="https://t.me/homeetHSE"><img src="{% static 'img/тг.png' %}" width="50" 
+                height="50" alt="telegram"></a>
+                <a href="https://vk.com/ruhomeet"><img src="{% static 'img/вк.png' %}" width="50" 
+                height="50" alt="vk"></a>
+            </div>
+        </div>
+        <br>
+        <div class="line"></div>
+        <br>
+        <div class="optional_com">
+            <p class="comment_footer">Предложение не является публичной овертой. <br>Сервис не несет ответственности за действия пользователей, достоверность информации и т.д.</p>
+            <p class="comment_footer">Сделано в <b>бвср</b></p>
+        </div>
+    </footer>
+</body>

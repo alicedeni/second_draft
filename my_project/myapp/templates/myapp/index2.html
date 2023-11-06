@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание профиля. Образование</title>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <style>
+        @font-face {
+            font-family: "MuseoSansCyrl"; 
+            src: url("{% static 'fonts/MuseoSansCyrl300.otf' %}") format("opentype"); 
+        }
+        * {
+            font-family: "MuseoSansCyrl";
+        }
+    </style>
+</head>
+<body>
+    <header class="header_homeet">
+        <div class="header_elem">
+            <img class="main_logo" src="{% static 'img/homeet.png' %}" alt="homeet logo">
+            <form>
+                <button class="button1">Выйти из аккаунта</button>
+            </form>
+        </div>
+    </header>
+    <main class="main_body">
+        <form>
+            <a class="button1" href="{% url 'index' %}">Назад</class=>
+        </form>
+        <div class="making_profile_title">
+            <h1>Создание профиля</h1>
+            <p class="gray_text">/ Образование</p>
+        </div>
+        <div class="line"></div>
+        <div></div>
+        <div class="col">
+            <div class="all">
+            <div class="main_about">
+                <form>
+                    <input class="radio" name="types" id="student" type="radio">
+                    <label class="variant" for="student">Студент/выпускник</label>
+                    <input class="radio" name="types" id="worker" type="radio">
+                    <label class="variant" for="worker">Сотрудник</label>
+                </form>
+                <form class="range-slider">
+                <label for="range" class="label-range">Курс</label>
+                <input class="slider" id="range" type="range" name="range" min="1" max="6" step="1" value="1" onchange="$('#sizevalue').text($('#range').val());" onclick='eventRange()'>
+                </form>
+                <form>
+                    <input type="checkbox" class="ended_student" id="ended_student" onchange='eventGalka()'>
+                    <label for="ended_student" class="galka"> Уже окончил Вышку</label>
+                </form>
+                <p>Ступень образования</p>
+                <div class="dropdown">
+                    <p onclick="myFunction()" class="dropbtn" id="step1">Ступень образования</p>
+                      <div id="myDropdown" class="dropdown-content">
+                        <p class="v1">Бакалавриат</p>
+                        <p class="v1">Магистратура</p>
+                      </div>
+                    </div>
+                <p>Факультет</p>
+                <div class="dropdown2">
+                    <p onclick="myFunction2()" class="dropbtn2" id="step2">Факультет</p>
+                      <div id="myDropdown2" id="dropdown-content2" class="dropdown-content2">
+                        <p class="v2">Московский институт электроники и математики</p>
+                        <p class="v2">Высшая школа бизнеса</p>
+                        <p class="v2">Факультет компьютерных наук</p>
+                    </div>
+                </div>
+                <p>Образовательная программа</p>
+                <div class="dropdown3">
+                    <p onclick="myFunction3()" class="dropbtn3" id="step3">Образовательная программа</p>
+                      <div id="myDropdown3" id="dropdown-content3" class="dropdown-content3">
+                        <p class="v3">Информатика и вычислительная техника</p>
+                        <p class="v3">Информационная безопасность</p>
+                        <p class="v3">Прикладная математика</p>
+                        <p class="v3">Прикладная математика и информатика</p>
+                    </div>
+                </div>
+                <form>
+                    <input class="inputt" name="name" id="name" type="text" placeholder="Работа" onchange='eventWork(this.value)'>
+                </form>
+            </div>
+            <div class="future_profile_all">
+                <p style="margin-bottom: 24px;">Так будет выглядеть твоя будущая страница</p>
+                <div class="future_profile">
+                    <div class="photo_in_profile">
+                        <div class="border_photo"></div>
+                        <form>
+                            <button class="button_under_photo">Показать контакты</button>
+                        </form>
+                    </div>
+                    <div class="about_person">
+                        <p><b>Имя Фамилия</b></p>
+                        <div class="main_info">
+                            <p class="small" id="gender2">Пол</p>
+                            <div class="point"></div>
+                            <p class="small" id="age2">Возраст</p>
+                            <div class="point"></div>
+                            <div class="education2">
+                                <p class="smalle" id="education21"></p>
+                                <p class="smalle" id="education22"></p>
+                                <p class="smalle" id="education23"></p>
+                                <p class="smalle" id="education24"></p>
+                            </div>
+                        </div>
+                        <div class="smth" id="work2"></div>
+                        <div class="about">
+                            <p class="comment_about">Описание</p>
+                            <button class="turn_button">Развернуть</button>
+                        </div>
+                        <div class="border_for_info">
+                        </div>
+                    </div>
+                </div>
+                <div class="notice">
+                    <div>
+                        <p><b>Расскажи где ты учишься</b></p>
+                        <p>Часто студенты ищут соседей по схожим интересам</p>
+                    </div>
+                        <img class="smile" src="{% static 'img/smile2.jpg' %}" width="25" 
+                        height="25" alt="happy face">
+                </div>
+                <div class="continue">
+                    <div></div>
+                    <form>
+                        <button class="button2">Продолжить</button>
+                    </form>
+                </div>
+            </div>
+            </div>
+            </div>
+            <script src="{% static './js/script2.js' %}"></script>
+    </main>
+    <footer class="footer">
+        <p class="email">Support@hommet.com</p>
+        <p>Техническая поддержка</p>
+        <div class = "info">
+            <div class="info_text">
+                <p>О сервисе</p>
+                <p>Контакты</p>
+                <p>Политика конфиденциальности</p>
+            </div>
+            <div>
+                <a href="https://t.me/homeetHSE"><img src="{% static 'img/тг.png' %}" width="50" 
+                height="50" alt="telegram"></a>
+                <a href="https://vk.com/ruhomeet"><img src="{% static 'img/вк.png' %}" width="50" 
+                height="50" alt="vk"></a>
+            </div>
+        </div>
+        <br>
+        <div class="line"></div>
+        <br>
+        <div class="optional_com">
+            <p class="comment_footer">Предложение не является публичной овертой. <br>Сервис не несет ответственности за действия пользователей, достоверность информации и т.д.</p>
+            <p class="comment_footer">Сделано в <b>бвср</b></p>
+        </div>
+    </footer>
+</body>
