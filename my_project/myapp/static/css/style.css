@@ -1,0 +1,360 @@
+* {
+    border: 0;
+    border-radius: 0;
+    box-sizing: border-box;
+    font-family: "MuseoSansCyrl";
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+@font-face {
+    font-family: "MuseoSansCyrl";
+    src: url("myapp/static/fonts/MuseoSansCyrl300.otf") format("opentype");
+}
+
+
+.header_homeet {
+    display: flex;
+    box-shadow: 0px 1.5px 4.5px 0px rgba(121,83,195, 0.5);
+    flex-direction: column;
+    justify-content: center;
+    height: 90px;
+}
+
+.header_elem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+.main_logo {
+    display: block;
+    width: 90px;
+}
+
+.button1 {
+    background: #fff;
+    border: 1px solid rgb(121,83,195);
+    color: rgb(121,83,195);
+    padding: 7px 25px;
+    justify-content: center;
+    border-radius: 7px;
+}
+
+.gray_text {
+    line-height: 30px;
+    color: #ccc;
+    display: flex;
+}
+
+.main_body {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 160px;
+    padding-bottom: 160px;
+    padding-top: 60px;
+    gap:30px;
+}
+
+.main_about {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.making_profile_title {
+    align-items: flex-end;
+    display: flex;
+    gap: 20px;
+}
+
+.line {
+    background-color: rgb(121,83,195);
+    height: 1.5px;
+}
+
+.uploading_photo {
+    display: flex;
+    align-items: center;
+    border: 1.5px dashed #ccc;
+    border-radius: 10px;
+    flex-direction: column;
+    height: 180px;
+    width: 400px;
+    padding: 40px 20px;
+    gap: 20px;
+}
+
+.button2 {
+    background: rgb(121,83,195);
+    color: #fff;
+    padding: 7px 25px;
+    justify-content: center;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.inputt {
+    background-color: #f1f1f1;
+    border-radius: 7px;
+    line-height: 24px;
+    min-height: 60px;
+    padding: 16px 12px;
+    width: 400px;
+    color:black;
+}
+
+.inputtd {
+    background-color: #f1f1f1;
+    border-radius: 7px;
+    color:black;
+    line-height: 24px;
+    min-height: 60px;
+    padding: 16px 12px;
+    width: 180px;
+}
+
+.inputta {
+    background-color: #f1f1f1;
+    border-radius: 7px;
+    line-height: 18px;
+    min-height: 128px;
+    padding: 16px 12px;
+    width: 400px;
+    outline: none;
+    resize:none;
+}
+
+.radio {
+    align-items: center;
+    display: inline-flex;
+    user-select: none;
+    cursor: pointer;
+    background-color:rgb(121,83,195);
+}
+
+.comment {
+    width: 400px;
+    color: #ccc;
+    font-size: 12px;
+}
+
+.intro {
+    margin-bottom: 16px;
+    padding-left: 16px;
+}
+
+.all {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info_text {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.optional_com {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.email {
+    font-size: 32px;
+    line-height: 40px;
+    color: rgb(121,83,195);
+}
+
+.footer {
+    margin-top: 70px;
+    padding: 60px 160px;
+    border-top: 1px solid #ccc;
+    border-bottom: 10px solid rgb(121,83,195);
+}
+
+.notice {
+    border-radius: 16px;
+    box-shadow: 0px 1.5px 4.5px 0px rgba(0, 0, 0, 0.5);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    justify-content: space-between;
+}
+
+.future_profile {
+    border-radius: 16px;
+    box-shadow: 0px 1.5px 4.5px 0px rgba(0, 0, 0, 0.5);
+    padding: 12px 16px;
+    display: flex;
+    max-width: 630px;
+    margin-bottom: 24px;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.border_photo {
+    border: 1.5px dashed #ccc;
+    border-radius: 10px;
+    height: 190px;
+    width: 180px;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.continue {
+    margin-top: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment_footer {
+    color: #ccc;
+    font-size: 12px;
+}
+
+.button_under_photo {
+    background: rgb(171, 153, 207);
+    color: #fff;
+    padding: 7px 25px;
+    justify-content: center;
+    border-radius: 7px;
+    font-size: 16px;
+    width:180px;
+}
+
+.photo_in_profile {
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+
+}
+
+.border_for_info {
+    background-color: #f1f1f1;
+    border-radius: 7px;
+    color: #ccc;
+    padding: 16px 12px;
+    width: 400px;
+    height: 170px;
+}
+
+.about_person {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.smth {
+    background-color: #f1f1f1;
+    border-radius: 7px;
+    color: #ccc;
+    width: 100px;
+    height: 20px;
+}
+
+.main_info {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;   
+}
+
+#comment_about2 {
+  width: 300px;
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.small {
+    font-size: 12px;
+}
+
+.about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.turn_button {
+    color:rgb(121,83,195);
+    background-color:#fff;
+    font-size: 14px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+.variant:before {
+    content: " ";
+    color: rgb(121,83,195);
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(121,83,195);
+    vertical-align: middle;
+    border-radius: 20px;
+}
+input:checked + .variant:before {
+    content: '\2B24';
+}
+
+.variants {
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+}
+
+.point {
+    height: 5px;
+    width: 5px;
+    background-color: #f1f1f1; 
+}
+
+.error {
+    font-size: 12px;
+    color: red;
+    visibility: hidden;
+}
+
+#name_format {
+    font-size: 12px;
+    color: red;
+    visibility: hidden;
+}
+
+#telegram2 {
+    visibility: hidden;
+}
+
+#number2 {
+    visibility: hidden;
+}
