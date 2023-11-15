@@ -37,21 +37,21 @@
         <div></div>
         <div class="col">
             <div class="all">
-            <div class="main_about">
-                <form>
+            <form class="main_about">
+                <div>
                     <input class="radio" name="types" id="student" type="radio">
                     <label class="variant" for="student">Студент/выпускник</label>
                     <input class="radio" name="types" id="worker" type="radio">
                     <label class="variant" for="worker">Сотрудник</label>
-                </form>
-                <form class="range-slider">
+                </div>
+                <div class="range-slider">
                 <label for="range" class="label-range">Курс</label>
                 <input class="slider" id="range" type="range" name="range" min="1" max="6" step="1" value="1" onchange="$('#sizevalue').text($('#range').val());" onclick='eventRange()'>
-                </form>
-                <form>
+                </div>
+                <div>
                     <input type="checkbox" class="ended_student" id="ended_student" onchange='eventGalka()'>
                     <label for="ended_student" class="galka"> Уже окончил Вышку</label>
-                </form>
+                </div>
                 <p>Ступень образования</p>
                 <div class="dropdown">
                     <p onclick="myFunction()" class="dropbtn" id="step1">Ступень образования</p>
@@ -79,10 +79,11 @@
                         <p class="v3">Прикладная математика и информатика</p>
                     </div>
                 </div>
-                <form>
+                <div>
                     <input class="inputt" name="name" id="name" type="text" placeholder="Работа" onchange='eventWork(this.value)'>
-                </form>
-            </div>
+                </div>
+                <input type="submit" value="Продолжить" class="button2">
+            </form>
             <div class="future_profile_all">
                 <p style="margin-bottom: 24px;">Так будет выглядеть твоя будущая страница</p>
                 <div class="future_profile">
@@ -93,11 +94,11 @@
                         </form>
                     </div>
                     <div class="about_person">
-                        <p><b>Имя Фамилия</b></p>
+                        <p><b>Имя Фамилия {{ user.name_and_surname }}</b></p>
                         <div class="main_info">
-                            <p class="small" id="gender2">Пол</p>
+                            <p class="small" id="gender2">Пол {{ user.gender }}</p>
                             <div class="point"></div>
-                            <p class="small" id="age2">Возраст</p>
+                            <p class="small" id="age2">Возраст {{ user.age }}</p>
                             <div class="point"></div>
                             <div class="education2">
                                 <p class="smalle" id="education21"></p>
@@ -132,7 +133,7 @@
             </div>
             </div>
             </div>
-            <script src="{% static './js/script2.js' %}"></script>
+            <script src="{% static 'js/script2.js' %}"></script>
     </main>
     <footer class="footer">
         <p class="email">Support@hommet.com</p>
@@ -159,3 +160,4 @@
         </div>
     </footer>
 </body>
+</html>
